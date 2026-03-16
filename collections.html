@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+   <div class="offer-bar">
+        <p>Sign Up and <b>GET 20% OFF</b> for your first Order
+        <i id="offer-close"  style="margin-left: 10%; cursor: pointer;" class="fa-solid fa-xmark"></i>
+        </p>
+    </div>
+
+    <nav class="navbar">
+            <h1 class="font-extrabold text-4xl">NOSTRA</h1>
+            <div class="navbar-links">
+                <p class="navbar-link"><a href="./index.html">Home</a></p>
+                <p class="navbar-link"><a href="#new-arrival">New Arrival</a></p>
+                <p class="navbar-link"><a href="#most-wanted">Most Wanted</a></p>
+                <p class="navbar-link"><a href="./collections.html">Collections</a></p>
+                <p class="navbar-link"><a href="./contactus.html">Contact Us</a></p>
+                <p class="navbar-link"><a href="./Signup.html">Sign Up</a></p>
+            </div>
+            <div class="navbar-menu-toggle">
+                <i id="side-navbar-activate" class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+
+     <div class="side-navbar"> 
+            <p style="text-align: right;">
+                <i id="side-navbar-close" class="fa-solid fa-xmark"></i>
+            </p>
+            <div class="side-navbar-links">
+
+                <p class="side-navbar-link"><a href="./index.html">Home</a></p>
+                <p class="side-navbar-link"><a href="#new-arrival">New Arrival</a></p>
+            <p class="side-navbar-link"><a href="#most-wanted">Most Wanted</a></p>
+            <p class="side-navbar-link"><a href="./collections.html">Collections</a></p>
+            <p class="side-navbar-link"><a href="./contactus.html">Contact Us</a></p>
+            </div>
+            
+        </div>
+      <main class="collections-main">
+        <!-- Page Title -->
+        <section class="page-header">
+            <h1>Our Collections</h1>
+            <p>Browse our extensive collection of premium fashion items</p>
+        </section>
+
+        <div class="collections-container">
+            <!-- Sidebar Filter -->
+            <aside class="filter-sidebar">
+                <h3>Filter Products</h3>
+                
+                <!-- Category Filter -->
+                <div class="filter-group">
+                    <h4>Category</h4>
+                    <label class="filter-label">
+                        <input type="checkbox" value="all" onchange="filterAndSearch()" checked>
+                        All Products
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" value="men" onchange="filterAndSearch()">
+                        Men's Fashion
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" value="women" onchange="filterAndSearch()">
+                        Women's Fashion
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" value="accessories" onchange="filterAndSearch()">
+                        Accessories
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" value="shoes" onchange="filterAndSearch()">
+                        Shoes
+                    </label>
+                </div>
+
+                <!-- Price Filter -->
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <input 
+                        type="range" 
+                        id="priceFilter" 
+                        min="0" 
+                        max="200" 
+                        value="200"
+                        onchange="filterAndSearch()"
+                        class="price-slider"
+                    >
+                    <p>Price: $<span id="priceValue">200</span> and below</p>
+                </div>
+
+                <!-- Size Filter -->
+                <div class="filter-group">
+                    <h4>Size</h4>
+                    <label class="filter-label">
+                        <input type="checkbox" value="xs" onchange="filterAndSearch()">
+                        XS
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" value="s" onchange="filterAndSearch()">
+                        S
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" value="m" onchange="filterAndSearch()">
+                        M
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" value="l" onchange="filterAndSearch()">
+                        L
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" value="xl" onchange="filterAndSearch()">
+                        XL
+                    </label>
+                </div>
+
+                <!-- Color Filter -->
+                <div class="filter-group">
+                    <h4>Color</h4>
+                    <div class="color-filters">
+                        <label class="color-box" style="background-color: #000;" title="Black">
+                            <input type="checkbox" value="black" onchange="filterAndSearch()">
+                        </label>
+                        <label class="color-box" style="background-color: #fff; border: 1px solid #ccc;" title="White">
+                            <input type="checkbox" value="white" onchange="filterAndSearch()">
+                        </label>
+                        <label class="color-box" style="background-color: rgb(178, 199, 237)" title="Blue">
+                            <input type="checkbox" value="blue" onchange="filterAndSearch()">
+                        </label>
+                        <label class="color-box" style="background-color: #4ECDC4;" title="Green">
+                            <input type="checkbox" value="green" onchange="filterAndSearch()">
+                        </label>
+                        <label class="color-box" style="background-color: #FFE66D;" title="Yellow">
+                            <input type="checkbox" value="yellow" onchange="filterAndSearch()">
+                        </label>
+                        <label class="color-box" style="background-color: rgb(198, 56, 56);" title="Brown">
+                            <input type="checkbox" value="brown" onchange="filterAndSearch()">
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn" style="background-color:  rgb(29, 35, 44); color: white; padding: 10px; border-radius: 10px;" onclick="resetFilters()"><b>Reset Filters</b></button>
+            </aside>
+
+            <!-- Products Grid -->
+            <section class="products-section">
+                <div class="section-header">
+                    <h2>All Products</h2>
+                    <div class="sort-options">
+                        <label for="sortBy">Sort by:</label>
+                        <select id="sortBy" onchange="sortProducts()">
+                            <option value="default">Default</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                </div>
+<div class="filter-group">
+                    <h4>Search</h4>
+                    <input type="text" id="searchInput" class="search-box" placeholder="Search products..." onkeyup="filterAndSearch()">
+                </div>
+                <!-- Results Count -->
+                <p class="results-count">Showing <span id="resultCount">0</span> products</p>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsContainer">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+
+                <!-- No Results Message -->
+                <div id="noResults" class="no-results" style="display: none;">
+                    <p>No products found matching your filters.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="text-4xl font-extrabold">NOSTRA</h3>
+                <p>The Standard chunk of Lorem ipsum used since the 1500s is reproduced below for those interested.</p>
+            </div>
+            <div class="footer-section">
+                <h4 class="text-xl font-bold">Quick Links</h4>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./collections.html">Collections</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                     <li><a href="./Signup.html">Contact Us</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="text-xl font-bold">Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nostra.com. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>
